@@ -1,3 +1,16 @@
-<p>
-  client-list works!
-</p>
+<table class="table table-sm">
+  <thead>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Edad</th>
+    <th>Fecha de nacimiento</th>
+  </thead>
+  <ng-container *ngFor="let client of clientArray">
+    <tr class="table-dark">
+      <Td>{{client.name}}</Td>
+      <Td>{{client.lastName}}</Td>
+      <Td>{{client.age}}</Td>
+      <Td>{{client.birthdate}}</Td>
+    </tr>
+  </ng-container>
+</table>

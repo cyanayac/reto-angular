@@ -24,6 +24,7 @@ export class ClientComponent implements OnInit {
         this.showSuccessMessage = true;
         setTimeout(() => this.showSuccessMessage = false, 3000);
       this.submitted = false;
+      this.clientService.form.reset;
     }
     
     // else{

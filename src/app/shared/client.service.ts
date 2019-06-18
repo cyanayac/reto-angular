@@ -15,8 +15,8 @@ export class ClientService {
     $key: new FormControl(null),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     lastName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    age: new FormControl(''),
-    birthdate: new FormControl('')
+    age: new FormControl('', Validators.required),
+    birthdate: new FormControl('', Validators.required)
   });
 
   getClients(){
