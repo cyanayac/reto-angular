@@ -10,6 +10,7 @@ export class ClientListComponent implements OnInit {
 
   constructor( private clientService: ClientService) { }
   clientArray = [];
+  promAge= ""
 
   ngOnInit() {
     this.clientService.getClients().subscribe(
@@ -20,7 +21,23 @@ export class ClientListComponent implements OnInit {
             ...item.payload.val()
           };
         });
+        this.calculateProm()
       });
+      
+  }
+
+  calculateProm(){
+    let numClients = this.clientArray.length;
+    let sumAge = 0;
+    
+    if(numClients > 0){
+      for (let client of this.clientArray) {
+        sumAge = sumAge + parseFloat(client.age);
+      }
+      this.promAge = (sumAge/ numClients).toFixed(2);
+      console.log(this.promAge); 
+    }
+
   }
 
 }
