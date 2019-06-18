@@ -26,10 +26,6 @@ export class ClientComponent implements OnInit {
       this.submitted = false;
       this.clientService.form.reset;
     }
-    
-    // else{
-    //   this.clientService.updateClient(this.clientService.form.value);
-    // }
 
   }
 
