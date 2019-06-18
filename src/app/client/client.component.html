@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-5">
+    <form [formGroup]= "this.clientService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input formControlName="name" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.name.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.name.errors">
+          <label *ngIf="formControls.name.errors.required">El nombre es requerido</label>
+          <label *ngIf="formControls.name.errors.minlength">El nombre debe tener al menos 3 caracteres</label></div>
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.lastName.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">
+          <label *ngIf="formControls.lastName.errors.required">El apellido es requerido</label>
+          <label *ngIf="formControls.lastName.errors.minlength">El apellido debe tener al menos 3 caracteres</label></div>
+      </div>
+      <div class="form-group">
+        <label>Edad</label>
+        <input formControlName="age" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Cumpleaños</label>
+        <input type="date" formControlName="birthdate" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Crear">
+      </div>
+    </form>
+    <div class="alert alert-info" *ngIf="showSuccessMessage">
+      Creado correctamente
+    </div>
+  </div>
+  <div class="col-md-7">
+    <app-client-list></app-client-list>
+  </div>
+</div>
