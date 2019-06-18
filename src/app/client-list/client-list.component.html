@@ -5,6 +5,7 @@
     <th>Apellido</th>
     <th>Edad</th>
     <th>Fecha de nacimiento</th>
+    <th>Fecha probable de muerte</th>
   </thead>
   <ng-container *ngFor="let client of clientArray">
     <tr class="table-dark">
@@ -12,6 +13,7 @@
       <Td>{{client.lastName}}</Td>
       <Td>{{client.age}}</Td>
       <Td>{{client.birthdate}}</Td>
+      <Td>{{client.deathDate |  date:'dd/MM/yyyy'}}</Td>
     </tr>
   </ng-container>
 </table>
