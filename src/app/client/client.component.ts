@@ -11,6 +11,7 @@ export class ClientComponent implements OnInit {
   constructor( private clientService: ClientService) { }
   submitted: boolean;
   showSuccessMessage: boolean;
+  formGroup = this.clientService.form;
   formControls = this.clientService.form.controls;
 
   ngOnInit() {
@@ -24,7 +25,7 @@ export class ClientComponent implements OnInit {
         this.showSuccessMessage = true;
         setTimeout(() => this.showSuccessMessage = false, 3000);
       this.submitted = false;
-      this.clientService.form.reset;
+      this.clientService.form.reset();
     }
 
   }
